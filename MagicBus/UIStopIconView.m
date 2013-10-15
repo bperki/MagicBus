@@ -56,6 +56,7 @@
 
 -(id)UIStopIconViewWithImage:(NSString*) imageName andStopName:(NSString *)name andRadius:(float) radius atIndex:(int) index inContainerOfSize:(CGSize) containerSize parentView:(UIView *)parent
 {
+    int searchBarHeight = 24;
     nextBusTitle = @"Loading...";
     stopName = name;
     iconsPerRow = 2;
@@ -64,22 +65,25 @@
     int widthInset = (eachWidth - (2 * radius)) / 2;
     int heightInset = (containerSize.height - (2 * radius)) / 2;
     int x = eachWidth * (index % iconsPerRow) + widthInset;
-    int y = 44 + containerSize.height * (index / iconsPerRow) + heightInset + 10; // + 10 is for stop title
+    int y = searchBarHeight + containerSize.height * (index / iconsPerRow) + heightInset + 25; // + 25 is for stop title
     id this = [self initWithFrame:CGRectMake(x, y, radius * 2, radius * 2)];
     [self setBackgroundImage:imageName];
     
     // Create title label and add to parent view
         // This must go in the parent view or else it will get clipped off by the mask
-    int stopNameX = eachWidth * (index % iconsPerRow) + 5;
-    int stopNameY = y - 20;
-    int stopNameWidth = eachWidth - 10;
-    int stopNameHeight = 20;
+    int stopNameX = eachWidth * (index % iconsPerRow) + 10;
+    int stopNameY = y - 35;
+    int stopNameWidth = eachWidth - 15;
+    int stopNameHeight = 35;
     
     stopNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(stopNameX, stopNameY, stopNameWidth, stopNameHeight)];
     [stopNameLabel setFont:[UIFont fontWithName:@"Helvetica" size:12]];
     [stopNameLabel setTextAlignment:NSTextAlignmentCenter];
     [stopNameLabel setShadowColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0.33]];
     [stopNameLabel setShadowOffset:CGSizeMake(1, 1)];
+    [stopNameLabel setAdjustsFontSizeToFitWidth:NO];
+    [stopNameLabel setNumberOfLines:0];
+    [stopNameLabel setBaselineAdjustment:UIBaselineAdjustmentAlignCenters];
     [stopNameLabel setText:stopName];
     [parent addSubview:stopNameLabel];
     return this;

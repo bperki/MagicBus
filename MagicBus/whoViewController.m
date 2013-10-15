@@ -15,10 +15,14 @@
 @end
 
 @implementation whoViewController
+int searchBarHeight = 24;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setNeedsStatusBarAppearanceUpdate];
+    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+    [self.view addSubview:[[UINavigationBar alloc] initWithFrame:statusBarFrame]];
     self.arrivalTable.dataSource = self;
     self.arrivalArray = [[NSMutableArray alloc] initWithObjects:
                         @"Bursley Baits",
@@ -45,13 +49,17 @@
     UIStopIconView* stopIcon4 = [[UIStopIconView alloc] UIStopIconViewWithImage:@"PP_N.jpg" andStopName:@"Pierpont Commons (North)" andRadius:67 atIndex:3 inContainerOfSize: _stopsScrollView.frame.size parentView:(_stopsScrollView)];
     [stopIcon4 nextBusIs:@"Bursley Baits" arrivingIn:10];
     [_stopsScrollView addSubview:stopIcon4];
+    
+    [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // I don't think these actually apply until viewDidAppear
+    [_stopsScrollView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
+    [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight)];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [_stopsScrollView setContentSize:CGSizeMake(320, 175)];
-    [_stopsScrollView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
-    [_stopsScrollView setContentOffset:CGPointMake(0, 44)];
+    [_stopsScrollView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
+    [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight)];
     [self setStopsScrollViewContentHeightForRows:2];
     
     //whoBusSchedule *busSchedule = [[whoBusSchedule alloc] init];
@@ -59,11 +67,13 @@
     //[busSchedule printBusSchedule];
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return [self.arrivalArray count];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *cellIdentifier = @"ArrivalCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -75,9 +85,22 @@
     return cell;
 }
 
-- (void)setStopsScrollViewContentHeightForRows:(int) rows
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    [_stopsScrollView setContentSize:CGSizeMake(320, (rows*175)+44)];
+    if (tableView == _arrivalTable)
+    {
+        if (section == 0)
+        {
+            return @"Arriving Soon Near You";
+        }
+    }
+    return @"";
+}
+
+- (void)setStopsScrollViewContentHeightForRows:(int)rows
+{
+    CGRect frame = [_stopsScrollView frame];
+    [_stopsScrollView setContentSize:CGSizeMake(frame.size.width, (rows*frame.size.height)+searchBarHeight)];
     
     [_stopsScrollViewBackgroundImage setTranslatesAutoresizingMaskIntoConstraints:YES];
     [_stopsScrollViewBackgroundImage setFrame:CGRectMake(0, -75, 320, 350)];
@@ -107,8 +130,8 @@
         CGPoint offset = [_stopsScrollView contentOffset];
         CGSize frame = [_stopsScrollView contentSize];
         CGRect backgroundImageFrame = [_stopsScrollViewBackgroundImage frame];
-        //backgroundImageFrame.origin.y = ((offset.y - 44) / 5) - 50;
-        backgroundImageFrame.origin.y = offset.y - (44 + 75) - (((offset.y - 44) / frame.height) * 50);
+        //backgroundImageFrame.origin.y = ((offset.y - searchBarHeight) / 5) - 50;
+        backgroundImageFrame.origin.y = offset.y - (searchBarHeight + 75) - (((offset.y - searchBarHeight) / frame.height) * 50);
         //NSLog(@"%f of %f", offset.y, frame.height);
         [_stopsScrollViewBackgroundImage setFrame:backgroundImageFrame];
     }
@@ -116,8 +139,8 @@
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint) velocity targetContentOffset:(inout CGPoint*) targetContentOffset
 {
-    if(targetContentOffset->y >= 44 - 40 && targetContentOffset->y <= 44 + 20){
-        targetContentOffset->y = 44;
+    if(targetContentOffset->y >= searchBarHeight - 40 && targetContentOffset->y <= searchBarHeight + 20){
+        targetContentOffset->y = searchBarHeight;
         [_stopsScrollView setContentOffset:(*targetContentOffset) animated:YES];
     }
 
@@ -126,32 +149,16 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     return;
-    if(scrollView == _stopsScrollView)
-    {
-        if(!decelerate){
-            CGPoint offset = [_stopsScrollView contentOffset];
-            if(offset.y >= 44 - 40 && offset.y <= 44 + 20){
-                offset.y = 44;
-                [_stopsScrollView setContentOffset:offset animated:YES];
-            }
-            NSLog(@"Scroll to: %d", [[NSNumber numberWithFloat:offset.y] intValue]);
-        }
-    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     return;
-    if(scrollView == _stopsScrollView)
-    {
-        CGPoint offset = [_stopsScrollView contentOffset];
-        if(offset.y >= 44 - 40 && offset.y <= 44 + 20){
-            offset.y = 44;
-            [_stopsScrollView setContentOffset:offset animated:YES];
-        }
-        NSLog(@"Scroll to: %d", [[NSNumber numberWithFloat:offset.y] intValue]);
-    }
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
 
 @end

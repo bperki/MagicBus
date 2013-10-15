@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIImageView *stopsScrollViewBackgroundImage;
 @property (weak, nonatomic) IBOutlet UITableView *arrivalTable;
-
+@property (weak, nonatomic) IBOutlet UITableViewCell *arrivalCell;
 
 @property (strong, nonatomic) NSMutableArray *arrivalArray;
 
