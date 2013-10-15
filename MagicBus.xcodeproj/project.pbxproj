@@ -22,6 +22,19 @@
 		DD150D0E180A473600D8C61F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD150CED180A473500D8C61F /* UIKit.framework */; };
 		DD150D16180A473600D8C61F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD150D14180A473600D8C61F /* InfoPlist.strings */; };
 		DD150D18180A473600D8C61F /* MagicBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD150D17180A473600D8C61F /* MagicBusTests.m */; };
+		DD49CDFF180B91E60041558B /* CCTC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD49CDFE180B91E60041558B /* CCTC.jpg */; };
+		DD49CE02180C28B10041558B /* NorthCampus_Afternoon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD49CE01180C28B10041558B /* NorthCampus_Afternoon.jpg */; };
+		DD49CE04180C2D060041558B /* NorthCampus_Afternoon_Blur.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD49CE03180C2D060041558B /* NorthCampus_Afternoon_Blur.jpg */; };
+		DD49CE08180C577C0041558B /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = DD49CE07180C577C0041558B /* XMLReader.m */; };
+		DD49CE0A180CC5D60041558B /* ugly_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DD49CE09180CC5D60041558B /* ugly_icon.png */; };
+		DD49CE11180CC9B80041558B /* BB_E.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD49CE0B180CC9B80041558B /* BB_E.jpg */; };
+		DD49CE12180CC9B80041558B /* BB_W.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD49CE0C180CC9B80041558B /* BB_W.jpg */; };
+		DD49CE13180CC9B80041558B /* FXB_S.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD49CE0D180CC9B80041558B /* FXB_S.jpg */; };
+		DD49CE14180CC9B80041558B /* PP_N.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD49CE0E180CC9B80041558B /* PP_N.jpg */; };
+		DD49CE15180CC9B80041558B /* PP_S.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD49CE0F180CC9B80041558B /* PP_S.jpg */; };
+		DD49CE16180CC9B80041558B /* PP_W.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD49CE10180CC9B80041558B /* PP_W.jpg */; };
+		DD49CE19180CCD3C0041558B /* whoBusSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = DD49CE18180CCD3C0041558B /* whoBusSchedule.m */; };
+		DD541D37180B4BCE00212331 /* UIStopIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD541D36180B4BCE00212331 /* UIStopIconView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +68,22 @@
 		DD150D13180A473600D8C61F /* MagicBusTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MagicBusTests-Info.plist"; sourceTree = "<group>"; };
 		DD150D15180A473600D8C61F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DD150D17180A473600D8C61F /* MagicBusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MagicBusTests.m; sourceTree = "<group>"; };
+		DD49CDFE180B91E60041558B /* CCTC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CCTC.jpg; sourceTree = "<group>"; };
+		DD49CE01180C28B10041558B /* NorthCampus_Afternoon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NorthCampus_Afternoon.jpg; sourceTree = "<group>"; };
+		DD49CE03180C2D060041558B /* NorthCampus_Afternoon_Blur.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NorthCampus_Afternoon_Blur.jpg; sourceTree = "<group>"; };
+		DD49CE06180C577C0041558B /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		DD49CE07180C577C0041558B /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		DD49CE09180CC5D60041558B /* ugly_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ugly_icon.png; sourceTree = "<group>"; };
+		DD49CE0B180CC9B80041558B /* BB_E.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BB_E.jpg; sourceTree = "<group>"; };
+		DD49CE0C180CC9B80041558B /* BB_W.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BB_W.jpg; sourceTree = "<group>"; };
+		DD49CE0D180CC9B80041558B /* FXB_S.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FXB_S.jpg; sourceTree = "<group>"; };
+		DD49CE0E180CC9B80041558B /* PP_N.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PP_N.jpg; sourceTree = "<group>"; };
+		DD49CE0F180CC9B80041558B /* PP_S.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PP_S.jpg; sourceTree = "<group>"; };
+		DD49CE10180CC9B80041558B /* PP_W.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PP_W.jpg; sourceTree = "<group>"; };
+		DD49CE17180CCD3C0041558B /* whoBusSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = whoBusSchedule.h; sourceTree = "<group>"; };
+		DD49CE18180CCD3C0041558B /* whoBusSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = whoBusSchedule.m; sourceTree = "<group>"; };
+		DD541D35180B4BCE00212331 /* UIStopIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStopIconView.h; sourceTree = "<group>"; };
+		DD541D36180B4BCE00212331 /* UIStopIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStopIconView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +143,11 @@
 		DD150CEF180A473500D8C61F /* MagicBus */ = {
 			isa = PBXGroup;
 			children = (
+				DD49CE05180C577C0041558B /* XMLReader */,
+				DD541D35180B4BCE00212331 /* UIStopIconView.h */,
+				DD541D36180B4BCE00212331 /* UIStopIconView.m */,
+				DD49CE17180CCD3C0041558B /* whoBusSchedule.h */,
+				DD49CE18180CCD3C0041558B /* whoBusSchedule.m */,
 				DD150CF8180A473600D8C61F /* whoAppDelegate.h */,
 				DD150CF9180A473600D8C61F /* whoAppDelegate.m */,
 				DD150CFB180A473600D8C61F /* Main_iPhone.storyboard */,
@@ -129,6 +163,8 @@
 		DD150CF0180A473500D8C61F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DD49CE09180CC5D60041558B /* ugly_icon.png */,
+				DD49CDFC180B91BE0041558B /* Images */,
 				DD150CF1180A473500D8C61F /* MagicBus-Info.plist */,
 				DD150CF2180A473500D8C61F /* InfoPlist.strings */,
 				DD150CF5180A473600D8C61F /* main.m */,
@@ -153,6 +189,47 @@
 				DD150D14180A473600D8C61F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD49CDFC180B91BE0041558B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DD49CE00180C28B10041558B /* Backgrounds */,
+				DD49CDFD180B91E60041558B /* BusStops */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		DD49CDFD180B91E60041558B /* BusStops */ = {
+			isa = PBXGroup;
+			children = (
+				DD49CE0B180CC9B80041558B /* BB_E.jpg */,
+				DD49CE0C180CC9B80041558B /* BB_W.jpg */,
+				DD49CE0D180CC9B80041558B /* FXB_S.jpg */,
+				DD49CE0E180CC9B80041558B /* PP_N.jpg */,
+				DD49CE0F180CC9B80041558B /* PP_S.jpg */,
+				DD49CE10180CC9B80041558B /* PP_W.jpg */,
+				DD49CDFE180B91E60041558B /* CCTC.jpg */,
+			);
+			path = BusStops;
+			sourceTree = "<group>";
+		};
+		DD49CE00180C28B10041558B /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				DD49CE03180C2D060041558B /* NorthCampus_Afternoon_Blur.jpg */,
+				DD49CE01180C28B10041558B /* NorthCampus_Afternoon.jpg */,
+			);
+			path = Backgrounds;
+			sourceTree = "<group>";
+		};
+		DD49CE05180C577C0041558B /* XMLReader */ = {
+			isa = PBXGroup;
+			children = (
+				DD49CE06180C577C0041558B /* XMLReader.h */,
+				DD49CE07180C577C0041558B /* XMLReader.m */,
+			);
+			path = XMLReader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,9 +310,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD150D00180A473600D8C61F /* Main_iPad.storyboard in Resources */,
+				DD49CE11180CC9B80041558B /* BB_E.jpg in Resources */,
+				DD49CE0A180CC5D60041558B /* ugly_icon.png in Resources */,
+				DD49CE04180C2D060041558B /* NorthCampus_Afternoon_Blur.jpg in Resources */,
+				DD49CE14180CC9B80041558B /* PP_N.jpg in Resources */,
 				DD150D05180A473600D8C61F /* Images.xcassets in Resources */,
+				DD49CDFF180B91E60041558B /* CCTC.jpg in Resources */,
 				DD150CFD180A473600D8C61F /* Main_iPhone.storyboard in Resources */,
+				DD49CE13180CC9B80041558B /* FXB_S.jpg in Resources */,
+				DD49CE15180CC9B80041558B /* PP_S.jpg in Resources */,
 				DD150CF4180A473500D8C61F /* InfoPlist.strings in Resources */,
+				DD49CE02180C28B10041558B /* NorthCampus_Afternoon.jpg in Resources */,
+				DD49CE12180CC9B80041558B /* BB_W.jpg in Resources */,
+				DD49CE16180CC9B80041558B /* PP_W.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,9 +341,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD49CE19180CCD3C0041558B /* whoBusSchedule.m in Sources */,
 				DD150CF6180A473600D8C61F /* main.m in Sources */,
 				DD150CFA180A473600D8C61F /* whoAppDelegate.m in Sources */,
+				DD49CE08180C577C0041558B /* XMLReader.m in Sources */,
 				DD150D03180A473600D8C61F /* whoViewController.m in Sources */,
+				DD541D37180B4BCE00212331 /* UIStopIconView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +487,7 @@
 				GCC_PREFIX_HEADER = "MagicBus/MagicBus-Prefix.pch";
 				INFOPLIST_FILE = "MagicBus/MagicBus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -410,6 +501,7 @@
 				GCC_PREFIX_HEADER = "MagicBus/MagicBus-Prefix.pch";
 				INFOPLIST_FILE = "MagicBus/MagicBus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -475,6 +567,7 @@
 				DD150D1D180A473600D8C61F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD150D1E180A473600D8C61F /* Build configuration list for PBXNativeTarget "MagicBusTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +576,7 @@
 				DD150D20180A473600D8C61F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

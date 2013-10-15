@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface whoViewController : UIViewController
+@interface whoViewController : UIViewController <UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIScrollView *stopsScrollView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIImageView *stopsScrollViewBackgroundImage;
+@property (weak, nonatomic) IBOutlet UITableView *arrivalTable;
+
+
+@property (strong, nonatomic) NSMutableArray *arrivalArray;
+
+- (void)setBackgroundImageForStopsScrollView:(NSString *)imageName;
+- (void)addRowToArrivalTable;
+
 
 @end
