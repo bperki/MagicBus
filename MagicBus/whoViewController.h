@@ -7,18 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "whoBusSchedule.h"
+#import "whoUserLocationController.h"
 
 @interface whoViewController : UIViewController <UITableViewDataSource>
+{
+    NSMutableArray *arrivalArray;
+    whoBusSchedule *busSchedule;
+    whoUserLocationController *userLocationController;
+}
 @property (weak, nonatomic) IBOutlet UIScrollView *stopsScrollView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIImageView *stopsScrollViewBackgroundImage;
 @property (weak, nonatomic) IBOutlet UITableView *arrivalTable;
 @property (weak, nonatomic) IBOutlet UITableViewCell *arrivalCell;
-
-@property (strong, nonatomic) NSMutableArray *arrivalArray;
+@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
 - (void)setBackgroundImageForStopsScrollView:(NSString *)imageName;
-- (void)addRowToArrivalTable;
+- (void)updateArrivalsTable;
 
 
 @end

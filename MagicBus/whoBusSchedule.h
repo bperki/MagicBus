@@ -7,13 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface whoBusSchedule : NSObject
 {
     NSDictionary *xmlDictionary;
+    NSMutableArray *arrivals;
 }
 
 -(void)getLatestBusSchedule;
+-(void)sortArrivalsByDistance:(CLLocation *)userLocation;
 -(void)printBusSchedule;
+-(int)getNumberOfArrivals;
+-(NSDictionary *)getArrivalAtIndex:(int)index;
++(NSString *)prettifyTime:(NSString *)seconds;
 
 @end

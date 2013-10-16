@@ -35,6 +35,8 @@
 		DD49CE16180CC9B80041558B /* PP_W.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD49CE10180CC9B80041558B /* PP_W.jpg */; };
 		DD49CE19180CCD3C0041558B /* whoBusSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = DD49CE18180CCD3C0041558B /* whoBusSchedule.m */; };
 		DD541D37180B4BCE00212331 /* UIStopIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD541D36180B4BCE00212331 /* UIStopIconView.m */; };
+		DDCFAE77180EF8C900D88BA1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCFAE76180EF8C900D88BA1 /* CoreLocation.framework */; };
+		DDCFAE7A180EF90400D88BA1 /* whoUserLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAE79180EF90400D88BA1 /* whoUserLocationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,9 @@
 		DD49CE18180CCD3C0041558B /* whoBusSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = whoBusSchedule.m; sourceTree = "<group>"; };
 		DD541D35180B4BCE00212331 /* UIStopIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIStopIconView.h; sourceTree = "<group>"; };
 		DD541D36180B4BCE00212331 /* UIStopIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIStopIconView.m; sourceTree = "<group>"; };
+		DDCFAE76180EF8C900D88BA1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DDCFAE78180EF90400D88BA1 /* whoUserLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = whoUserLocationController.h; path = ../whoUserLocationController.h; sourceTree = "<group>"; };
+		DDCFAE79180EF90400D88BA1 /* whoUserLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = whoUserLocationController.m; path = ../whoUserLocationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDCFAE77180EF8C900D88BA1 /* CoreLocation.framework in Frameworks */,
 				DD150CEC180A473500D8C61F /* CoreGraphics.framework in Frameworks */,
 				DD150CEE180A473500D8C61F /* UIKit.framework in Frameworks */,
 				DD150CEA180A473500D8C61F /* Foundation.framework in Frameworks */,
@@ -132,6 +138,7 @@
 		DD150CE8180A473500D8C61F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDCFAE76180EF8C900D88BA1 /* CoreLocation.framework */,
 				DD150CE9180A473500D8C61F /* Foundation.framework */,
 				DD150CEB180A473500D8C61F /* CoreGraphics.framework */,
 				DD150CED180A473500D8C61F /* UIKit.framework */,
@@ -144,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				DD49CE05180C577C0041558B /* XMLReader */,
+				DDCFAE78180EF90400D88BA1 /* whoUserLocationController.h */,
+				DDCFAE79180EF90400D88BA1 /* whoUserLocationController.m */,
 				DD541D35180B4BCE00212331 /* UIStopIconView.h */,
 				DD541D36180B4BCE00212331 /* UIStopIconView.m */,
 				DD49CE17180CCD3C0041558B /* whoBusSchedule.h */,
@@ -344,6 +353,7 @@
 				DD49CE19180CCD3C0041558B /* whoBusSchedule.m in Sources */,
 				DD150CF6180A473600D8C61F /* main.m in Sources */,
 				DD150CFA180A473600D8C61F /* whoAppDelegate.m in Sources */,
+				DDCFAE7A180EF90400D88BA1 /* whoUserLocationController.m in Sources */,
 				DD49CE08180C577C0041558B /* XMLReader.m in Sources */,
 				DD150D03180A473600D8C61F /* whoViewController.m in Sources */,
 				DD541D37180B4BCE00212331 /* UIStopIconView.m in Sources */,

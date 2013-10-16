@@ -23,14 +23,11 @@ int searchBarHeight = 24;
     [self setNeedsStatusBarAppearanceUpdate];
     CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
     [self.view addSubview:[[UINavigationBar alloc] initWithFrame:statusBarFrame]];
+    
     self.arrivalTable.dataSource = self;
-    self.arrivalArray = [[NSMutableArray alloc] initWithObjects:
-                        @"Bursley Baits",
-                        @"Northwood Express",
-                        @"Commuter Southbound",
-                        @"Diag to Diag Express",
-                        @"Commuter Northboard",
-                        nil];
+    arrivalArray = [[NSMutableArray alloc] init];
+    busSchedule = [[whoBusSchedule alloc] init];
+    userLocationController = [[whoUserLocationController alloc] init];
     
     [self setBackgroundImageForStopsScrollView:@"NorthCampus_Afternoon_Blur.jpg"];
     
@@ -50,26 +47,32 @@ int searchBarHeight = 24;
     [stopIcon4 nextBusIs:@"Bursley Baits" arrivingIn:10];
     [_stopsScrollView addSubview:stopIcon4];
     
-    [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // I don't think these actually apply until viewDidAppear
-    [_stopsScrollView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
-    [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight)];
+    [_stopsScrollView setContentInset:UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0)];
+    [_stopsScrollView setScrollIndicatorInsets:UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0)];
+    [_arrivalTable setScrollIndicatorInsets:UIEdgeInsetsMake(0, 0, [_tabBar frame].size.height, 0)];
+    [_arrivalTable setContentInset:UIEdgeInsetsMake(0, 0, [_tabBar frame].size.height, 0)];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // These won't fire in viewDidLoad
+    [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight) animated:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [_stopsScrollView setContentSize:CGSizeMake(320, 175)];
-    [_stopsScrollView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
-    [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight)];
+    [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // These won't fire in viewDidLoad
+    [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight) animated:NO];
     [self setStopsScrollViewContentHeightForRows:2];
     
-    //whoBusSchedule *busSchedule = [[whoBusSchedule alloc] init];
-    //[busSchedule getLatestBusSchedule];
-    //[busSchedule printBusSchedule];
+    //[self performSelectorInBackground:@selector(getLatestBusSchedule) withObject:self];
+    [self performSelectorInBackground:@selector(updateArrivalsTable) withObject:self];
+    NSLog(@"%@", [userLocationController getMostRecentLocation]);
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.arrivalArray count];
+    return [arrivalArray count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -78,10 +81,12 @@ int searchBarHeight = 24;
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    NSString *arrival = [self.arrivalArray objectAtIndex:indexPath.row];
+    NSString *arrival = [arrivalArray objectAtIndex:indexPath.row];
 
-    [cell.textLabel setText:arrival];
-    [cell.detailTextLabel setText:@"Some bus in some minutes"];
+    [cell.textLabel setText:[arrival valueForKey:@"stopName"]];
+    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@ will arrive in %@", [arrival valueForKey:@"routeName"], [arrival valueForKey:@"prettyTime"]]];
+    [cell.detailTextLabel setLineBreakMode:NSLineBreakByWordWrapping];
+    [cell.detailTextLabel setNumberOfLines:2];
     return cell;
 }
 
@@ -111,10 +116,18 @@ int searchBarHeight = 24;
     [_stopsScrollViewBackgroundImage setImage:[UIImage imageNamed:imageName]];
 }
 
-- (void)addRowToArrivalTable
+- (void)updateArrivalsTable
 {
-    //UITableViewCell *label = [[UITableViewCell alloc] init];
-    //[_arrivalTable addSubview:label];
+    [busSchedule getLatestBusSchedule];
+    [busSchedule sortArrivalsByDistance:[userLocationController getMostRecentLocation]];
+    [arrivalArray removeAllObjects];
+    int arrivalCount = [busSchedule getNumberOfArrivals];
+    for(int index = 0; index < arrivalCount; index++)
+    {
+        NSDictionary *arrival = [busSchedule getArrivalAtIndex:index];
+        [arrivalArray addObject:arrival];
+    }
+    [_arrivalTable reloadData];
 }
 
 - (void)didReceiveMemoryWarning
