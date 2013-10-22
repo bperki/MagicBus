@@ -110,9 +110,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-getMostRecentLocation"
-            landmarkType = "5">
+            endingLineNumber = "34">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,9 +124,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "-init"
-            landmarkType = "5">
+            endingLineNumber = "20">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
