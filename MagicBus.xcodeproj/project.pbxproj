@@ -40,6 +40,10 @@
 		DDDABE161816C29B004E29A5 /* mapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDABE151816C29B004E29A5 /* mapViewController.m */; };
 		DDDABE181816C396004E29A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDABE171816C396004E29A5 /* MapKit.framework */; };
 		DDDABE1B1816C9A3004E29A5 /* tabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDABE1A1816C9A3004E29A5 /* tabViewController.m */; };
+		DDDABE1E1816DB4A004E29A5 /* stopsIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE1C1816DB4A004E29A5 /* stopsIcon@2x.png */; };
+		DDDABE1F1816DB4A004E29A5 /* stopsIcon@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE1D1816DB4A004E29A5 /* stopsIcon@2x.psd */; };
+		DDDABE221816DCC1004E29A5 /* routesIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE201816DCC1004E29A5 /* routesIcon@2x.png */; };
+		DDDABE231816DCC1004E29A5 /* routesIcon@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE211816DCC1004E29A5 /* routesIcon@2x.psd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		DDDABE171816C396004E29A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DDDABE191816C9A3004E29A5 /* tabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabViewController.h; sourceTree = "<group>"; };
 		DDDABE1A1816C9A3004E29A5 /* tabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabViewController.m; sourceTree = "<group>"; };
+		DDDABE1C1816DB4A004E29A5 /* stopsIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopsIcon@2x.png"; sourceTree = "<group>"; };
+		DDDABE1D1816DB4A004E29A5 /* stopsIcon@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "stopsIcon@2x.psd"; sourceTree = "<group>"; };
+		DDDABE201816DCC1004E29A5 /* routesIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "routesIcon@2x.png"; sourceTree = "<group>"; };
+		DDDABE211816DCC1004E29A5 /* routesIcon@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "routesIcon@2x.psd"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +225,10 @@
 		DD49CDFC180B91BE0041558B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DDDABE201816DCC1004E29A5 /* routesIcon@2x.png */,
+				DDDABE211816DCC1004E29A5 /* routesIcon@2x.psd */,
+				DDDABE1C1816DB4A004E29A5 /* stopsIcon@2x.png */,
+				DDDABE1D1816DB4A004E29A5 /* stopsIcon@2x.psd */,
 				DD49CE00180C28B10041558B /* Backgrounds */,
 				DD49CDFD180B91E60041558B /* BusStops */,
 			);
@@ -336,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD150D00180A473600D8C61F /* Main_iPad.storyboard in Resources */,
+				DDDABE1F1816DB4A004E29A5 /* stopsIcon@2x.psd in Resources */,
 				DD49CE11180CC9B80041558B /* BB_E.jpg in Resources */,
 				DD49CE0A180CC5D60041558B /* ugly_icon.png in Resources */,
 				DD49CE04180C2D060041558B /* NorthCampus_Afternoon_Blur.jpg in Resources */,
@@ -346,7 +359,10 @@
 				DD49CE13180CC9B80041558B /* FXB_S.jpg in Resources */,
 				DD49CE15180CC9B80041558B /* PP_S.jpg in Resources */,
 				DD150CF4180A473500D8C61F /* InfoPlist.strings in Resources */,
+				DDDABE1E1816DB4A004E29A5 /* stopsIcon@2x.png in Resources */,
+				DDDABE231816DCC1004E29A5 /* routesIcon@2x.psd in Resources */,
 				DD49CE02180C28B10041558B /* NorthCampus_Afternoon.jpg in Resources */,
+				DDDABE221816DCC1004E29A5 /* routesIcon@2x.png in Resources */,
 				DD49CE12180CC9B80041558B /* BB_W.jpg in Resources */,
 				DD49CE16180CC9B80041558B /* PP_W.jpg in Resources */,
 			);
