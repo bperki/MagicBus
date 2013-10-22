@@ -1,20 +1,20 @@
 //
-//  whoViewController.m
+//  stopsViewController.m
 //  MagicBus
 //
 //  Created by Ben Perkins on 10/12/13.
 //  Copyright (c) 2013 perkinsb1024. All rights reserved.
 //
 
-#import "whoViewController.h"
+#import "stopsViewController.h"
 #import "UIStopIconView.h"
 #import "whoBusSchedule.h"
 
-@interface whoViewController ()
+@interface stopsViewController ()
 
 @end
 
-@implementation whoViewController
+@implementation stopsViewController
 int searchBarHeight = 24;
 
 - (void)viewDidLoad
@@ -47,22 +47,36 @@ int searchBarHeight = 24;
     [stopIcon4 nextBusIs:@"Bursley Baits" arrivingIn:10];
     [_stopsScrollView addSubview:stopIcon4];
     
+    // Add "pull to refresh" to table
+    refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [_arrivalTable insertSubview:refreshControl atIndex:0];
+    //[refreshControl setAutoresizingMask:(UIViewAutoresizingFlexibleTopMargin)];
+    
+    //[[refreshControl.subviews objectAtIndex:0] setFrame:CGRectMake(([_arrivalTable frame].size.width / 4), 0, 20, 30)];
+    
+    
     [_stopsScrollView setContentInset:UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0)];
     [_stopsScrollView setScrollIndicatorInsets:UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0)];
     [_arrivalTable setScrollIndicatorInsets:UIEdgeInsetsMake(0, 0, [_tabBar frame].size.height, 0)];
     [_arrivalTable setContentInset:UIEdgeInsetsMake(0, 0, [_tabBar frame].size.height, 0)];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+
     [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // These won't fire in viewDidLoad
     [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight) animated:NO];
+    [_stopsScrollView setAutoresizesSubviews:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // These won't fire in viewDidLoad
     [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight) animated:NO];
+    
     [self setStopsScrollViewContentHeightForRows:2];
     
     //[self performSelectorInBackground:@selector(getLatestBusSchedule) withObject:self];
@@ -167,6 +181,23 @@ int searchBarHeight = 24;
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     return;
+}
+
+- (void)refresh:(id)sender
+{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_group_t group = dispatch_group_create();
+    
+    // Add a task to the group
+    dispatch_group_async(group, queue, ^{
+        [self updateArrivalsTable];
+    });
+    
+    // Add another task to the group
+    dispatch_group_notify(group, queue, ^{
+        [refreshControl endRefreshing];
+    });
+
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
