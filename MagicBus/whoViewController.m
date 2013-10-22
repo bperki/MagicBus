@@ -16,58 +16,69 @@
 
 @implementation whoViewController
 int searchBarHeight = 24;
+bool firstLaunch = true;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setNeedsStatusBarAppearanceUpdate];
-    CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
-    [self.view addSubview:[[UINavigationBar alloc] initWithFrame:statusBarFrame]];
-    
-    self.arrivalTable.dataSource = self;
-    arrivalArray = [[NSMutableArray alloc] init];
-    busSchedule = [[whoBusSchedule alloc] init];
-    userLocationController = [[whoUserLocationController alloc] init];
-    
-    [self setBackgroundImageForStopsScrollView:@"NorthCampus_Afternoon_Blur.jpg"];
-    
-    UIStopIconView* stopIcon1 = [[UIStopIconView alloc] UIStopIconViewWithImage:@"CCTC.jpg" andStopName:@"Central Campus Transit" andRadius:67 atIndex:0 inContainerOfSize: _stopsScrollView.frame.size parentView:(_stopsScrollView)];
-    [stopIcon1 nextBusIs:@"Bursley Baits" arrivingIn:2];
-    [_stopsScrollView addSubview:stopIcon1];
-    
-    UIStopIconView* stopIcon2 = [[UIStopIconView alloc] UIStopIconViewWithImage:@"BB_E.jpg" andStopName:@"Bursley Baits (East)" andRadius:67 atIndex:1 inContainerOfSize: _stopsScrollView.frame.size parentView:(_stopsScrollView)];
-    [stopIcon2 nextBusIs:@"Commuter South" arrivingIn:4];
-    [_stopsScrollView addSubview:stopIcon2];
-    
-    UIStopIconView* stopIcon3 = [[UIStopIconView alloc] UIStopIconViewWithImage:@"PP_S.jpg" andStopName:@"Pierpoint Commons (South)" andRadius:67 atIndex:2 inContainerOfSize: _stopsScrollView.frame.size parentView:(_stopsScrollView)];
-    [stopIcon3 nextBusIs:@"Northwood" arrivingIn:5];
-    [_stopsScrollView addSubview:stopIcon3];
-    
-    UIStopIconView* stopIcon4 = [[UIStopIconView alloc] UIStopIconViewWithImage:@"PP_N.jpg" andStopName:@"Pierpont Commons (North)" andRadius:67 atIndex:3 inContainerOfSize: _stopsScrollView.frame.size parentView:(_stopsScrollView)];
-    [stopIcon4 nextBusIs:@"Bursley Baits" arrivingIn:10];
-    [_stopsScrollView addSubview:stopIcon4];
-    
-    [_stopsScrollView setContentInset:UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0)];
-    [_stopsScrollView setScrollIndicatorInsets:UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0)];
-    [_arrivalTable setScrollIndicatorInsets:UIEdgeInsetsMake(0, 0, [_tabBar frame].size.height, 0)];
-    [_arrivalTable setContentInset:UIEdgeInsetsMake(0, 0, [_tabBar frame].size.height, 0)];
+    if(firstLaunch)
+    {
+        [self setNeedsStatusBarAppearanceUpdate];
+        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+        [self.view addSubview:[[UINavigationBar alloc] initWithFrame:statusBarFrame]];
+        
+        self.arrivalTable.dataSource = self;
+        arrivalArray = [[NSMutableArray alloc] init];
+        busSchedule = [[whoBusSchedule alloc] init];
+        userLocationController = [[whoUserLocationController alloc] init];
+        
+        [self setBackgroundImageForStopsScrollView:@"NorthCampus_Afternoon_Blur.jpg"];
+        
+        UIStopIconView* stopIcon1 = [[UIStopIconView alloc] UIStopIconViewWithImage:@"CCTC.jpg" andStopName:@"Central Campus Transit" andRadius:67 atIndex:0 inContainerOfSize: _stopsScrollView.frame.size parentView:(_stopsScrollView)];
+        [stopIcon1 nextBusIs:@"Bursley Baits" arrivingIn:2];
+        [_stopsScrollView addSubview:stopIcon1];
+        
+        UIStopIconView* stopIcon2 = [[UIStopIconView alloc] UIStopIconViewWithImage:@"BB_E.jpg" andStopName:@"Bursley Baits (East)" andRadius:67 atIndex:1 inContainerOfSize: _stopsScrollView.frame.size parentView:(_stopsScrollView)];
+        [stopIcon2 nextBusIs:@"Commuter South" arrivingIn:4];
+        [_stopsScrollView addSubview:stopIcon2];
+        
+        UIStopIconView* stopIcon3 = [[UIStopIconView alloc] UIStopIconViewWithImage:@"PP_S.jpg" andStopName:@"Pierpoint Commons (South)" andRadius:67 atIndex:2 inContainerOfSize: _stopsScrollView.frame.size parentView:(_stopsScrollView)];
+        [stopIcon3 nextBusIs:@"Northwood" arrivingIn:5];
+        [_stopsScrollView addSubview:stopIcon3];
+        
+        UIStopIconView* stopIcon4 = [[UIStopIconView alloc] UIStopIconViewWithImage:@"PP_N.jpg" andStopName:@"Pierpont Commons (North)" andRadius:67 atIndex:3 inContainerOfSize: _stopsScrollView.frame.size parentView:(_stopsScrollView)];
+        [stopIcon4 nextBusIs:@"Bursley Baits" arrivingIn:10];
+        [_stopsScrollView addSubview:stopIcon4];
+        
+        [_stopsScrollView setContentInset:UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0)];
+        [_stopsScrollView setScrollIndicatorInsets:UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0)];
+        [_arrivalTable setScrollIndicatorInsets:UIEdgeInsetsMake(0, 0, [_tabBar frame].size.height, 0)];
+        [_arrivalTable setContentInset:UIEdgeInsetsMake(0, 0, [_tabBar frame].size.height, 0)];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // These won't fire in viewDidLoad
-    [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight) animated:NO];
+    if(firstLaunch)
+    {
+        [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // These won't fire in viewDidLoad
+        [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight) animated:NO];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // These won't fire in viewDidLoad
-    [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight) animated:NO];
-    [self setStopsScrollViewContentHeightForRows:2];
-    
-    //[self performSelectorInBackground:@selector(getLatestBusSchedule) withObject:self];
-    [self performSelectorInBackground:@selector(updateArrivalsTable) withObject:self];
-    NSLog(@"%@", [userLocationController getMostRecentLocation]);
+    if(firstLaunch)
+    {
+        [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // These won't fire in viewDidLoad
+        [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight) animated:NO];
+        [self setStopsScrollViewContentHeightForRows:2];
+        
+        //[self performSelectorInBackground:@selector(getLatestBusSchedule) withObject:self];
+        [self performSelectorInBackground:@selector(updateArrivalsTable) withObject:self];
+        NSLog(@"%@", [userLocationController getMostRecentLocation]);
+        firstLaunch = false;
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
