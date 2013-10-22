@@ -15,7 +15,7 @@
 		DD150CFA180A473600D8C61F /* whoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD150CF9180A473600D8C61F /* whoAppDelegate.m */; };
 		DD150CFD180A473600D8C61F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD150CFB180A473600D8C61F /* Main_iPhone.storyboard */; };
 		DD150D00180A473600D8C61F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD150CFE180A473600D8C61F /* Main_iPad.storyboard */; };
-		DD150D03180A473600D8C61F /* whoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD150D02180A473600D8C61F /* whoViewController.m */; };
+		DD150D03180A473600D8C61F /* stopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD150D02180A473600D8C61F /* stopsViewController.m */; };
 		DD150D05180A473600D8C61F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD150D04180A473600D8C61F /* Images.xcassets */; };
 		DD150D0C180A473600D8C61F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD150D0B180A473600D8C61F /* XCTest.framework */; };
 		DD150D0D180A473600D8C61F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD150CE9180A473500D8C61F /* Foundation.framework */; };
@@ -37,6 +37,9 @@
 		DD541D37180B4BCE00212331 /* UIStopIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD541D36180B4BCE00212331 /* UIStopIconView.m */; };
 		DDCFAE77180EF8C900D88BA1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDCFAE76180EF8C900D88BA1 /* CoreLocation.framework */; };
 		DDCFAE7A180EF90400D88BA1 /* whoUserLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCFAE79180EF90400D88BA1 /* whoUserLocationController.m */; };
+		DDDABE161816C29B004E29A5 /* mapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDABE151816C29B004E29A5 /* mapViewController.m */; };
+		DDDABE181816C396004E29A5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDABE171816C396004E29A5 /* MapKit.framework */; };
+		DDDABE1B1816C9A3004E29A5 /* tabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDDABE1A1816C9A3004E29A5 /* tabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +65,8 @@
 		DD150CF9180A473600D8C61F /* whoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whoAppDelegate.m; sourceTree = "<group>"; };
 		DD150CFC180A473600D8C61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		DD150CFF180A473600D8C61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		DD150D01180A473600D8C61F /* whoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = whoViewController.h; sourceTree = "<group>"; };
-		DD150D02180A473600D8C61F /* whoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whoViewController.m; sourceTree = "<group>"; };
+		DD150D01180A473600D8C61F /* stopsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stopsViewController.h; sourceTree = "<group>"; };
+		DD150D02180A473600D8C61F /* stopsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = stopsViewController.m; sourceTree = "<group>"; };
 		DD150D04180A473600D8C61F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DD150D0A180A473600D8C61F /* MagicBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD150D0B180A473600D8C61F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -89,6 +92,11 @@
 		DDCFAE76180EF8C900D88BA1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DDCFAE78180EF90400D88BA1 /* whoUserLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = whoUserLocationController.h; path = ../whoUserLocationController.h; sourceTree = "<group>"; };
 		DDCFAE79180EF90400D88BA1 /* whoUserLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = whoUserLocationController.m; path = ../whoUserLocationController.m; sourceTree = "<group>"; };
+		DDDABE141816C29B004E29A5 /* mapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapViewController.h; sourceTree = "<group>"; };
+		DDDABE151816C29B004E29A5 /* mapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapViewController.m; sourceTree = "<group>"; };
+		DDDABE171816C396004E29A5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DDDABE191816C9A3004E29A5 /* tabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabViewController.h; sourceTree = "<group>"; };
+		DDDABE1A1816C9A3004E29A5 /* tabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDDABE181816C396004E29A5 /* MapKit.framework in Frameworks */,
 				DDCFAE77180EF8C900D88BA1 /* CoreLocation.framework in Frameworks */,
 				DD150CEC180A473500D8C61F /* CoreGraphics.framework in Frameworks */,
 				DD150CEE180A473500D8C61F /* UIKit.framework in Frameworks */,
@@ -138,6 +147,7 @@
 		DD150CE8180A473500D8C61F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DDDABE171816C396004E29A5 /* MapKit.framework */,
 				DDCFAE76180EF8C900D88BA1 /* CoreLocation.framework */,
 				DD150CE9180A473500D8C61F /* Foundation.framework */,
 				DD150CEB180A473500D8C61F /* CoreGraphics.framework */,
@@ -161,8 +171,12 @@
 				DD150CF9180A473600D8C61F /* whoAppDelegate.m */,
 				DD150CFB180A473600D8C61F /* Main_iPhone.storyboard */,
 				DD150CFE180A473600D8C61F /* Main_iPad.storyboard */,
-				DD150D01180A473600D8C61F /* whoViewController.h */,
-				DD150D02180A473600D8C61F /* whoViewController.m */,
+				DDDABE191816C9A3004E29A5 /* tabViewController.h */,
+				DDDABE1A1816C9A3004E29A5 /* tabViewController.m */,
+				DD150D01180A473600D8C61F /* stopsViewController.h */,
+				DD150D02180A473600D8C61F /* stopsViewController.m */,
+				DDDABE141816C29B004E29A5 /* mapViewController.h */,
+				DDDABE151816C29B004E29A5 /* mapViewController.m */,
 				DD150D04180A473600D8C61F /* Images.xcassets */,
 				DD150CF0180A473500D8C61F /* Supporting Files */,
 			);
@@ -289,6 +303,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = perkinsb1024;
 				TargetAttributes = {
+					DD150CE5180A473500D8C61F = {
+						DevelopmentTeam = BLX2JSSS9B;
+					};
 					DD150D09180A473600D8C61F = {
 						TestTargetID = DD150CE5180A473500D8C61F;
 					};
@@ -353,10 +370,12 @@
 				DD49CE19180CCD3C0041558B /* whoBusSchedule.m in Sources */,
 				DD150CF6180A473600D8C61F /* main.m in Sources */,
 				DD150CFA180A473600D8C61F /* whoAppDelegate.m in Sources */,
+				DDDABE161816C29B004E29A5 /* mapViewController.m in Sources */,
 				DDCFAE7A180EF90400D88BA1 /* whoUserLocationController.m in Sources */,
 				DD49CE08180C577C0041558B /* XMLReader.m in Sources */,
-				DD150D03180A473600D8C61F /* whoViewController.m in Sources */,
+				DD150D03180A473600D8C61F /* stopsViewController.m in Sources */,
 				DD541D37180B4BCE00212331 /* UIStopIconView.m in Sources */,
+				DDDABE1B1816C9A3004E29A5 /* tabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,10 +512,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MagicBus/MagicBus-Prefix.pch";
 				INFOPLIST_FILE = "MagicBus/MagicBus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -507,10 +529,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MagicBus/MagicBus-Prefix.pch";
 				INFOPLIST_FILE = "MagicBus/MagicBus-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

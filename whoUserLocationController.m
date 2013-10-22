@@ -46,7 +46,8 @@
 {
     NSLog(@"didUpdateToLocation: %@", newLocation);
     currentLocation = newLocation;
-    NSLog(@"%@", currentLocation);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"locationChanged" object:self userInfo:[[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:newLocation, nil] forKeys:[[NSArray alloc] initWithObjects:@"location", nil] ]];
+    //NSLog(@"%@", currentLocation);
 }
 
 @end

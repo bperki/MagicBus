@@ -1,5 +1,5 @@
 //
-//  whoViewController.h
+//  stopsViewController.h
 //  MagicBus
 //
 //  Created by Ben Perkins on 10/12/13.
@@ -10,11 +10,12 @@
 #import "whoBusSchedule.h"
 #import "whoUserLocationController.h"
 
-@interface whoViewController : UIViewController <UITableViewDataSource>
+@interface stopsViewController : UIViewController <UITableViewDataSource>
 {
     NSMutableArray *arrivalArray;
     whoBusSchedule *busSchedule;
     whoUserLocationController *userLocationController;
+    UIRefreshControl *refreshControl;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *stopsScrollView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -25,6 +26,5 @@
 
 - (void)setBackgroundImageForStopsScrollView:(NSString *)imageName;
 - (void)updateArrivalsTable;
-
 
 @end

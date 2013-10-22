@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Who View Controller-->
+        <!--Stops View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="whoViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="stopsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qKd-rG-4IW"/>
                         <viewControllerLayoutGuide type="bottom" id="56g-TJ-Ock"/>
@@ -133,7 +133,7 @@
         <scene sceneID="G1y-IL-FAQ">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="1xT-y7-ICD" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="YKn-k8-gfJ">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -169,10 +169,10 @@
             </objects>
             <point key="canvasLocation" x="957" y="-108"/>
         </scene>
-        <!--View Controller - Map-->
+        <!--Map View Controller - Map-->
         <scene sceneID="FH7-O2-f1w">
             <objects>
-                <viewController id="MaI-l9-TQW" sceneMemberID="viewController">
+                <viewController id="MaI-l9-TQW" customClass="mapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="644-Ea-a9f"/>
                         <viewControllerLayoutGuide type="bottom" id="Hoh-4P-HPr"/>
@@ -180,9 +180,18 @@
                     <view key="view" contentMode="scaleToFill" id="QZ0-9Z-v0n">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="imS-Of-IsZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="XdY-xH-9KU"/>
+                    <connections>
+                        <outlet property="mapView" destination="imS-Of-IsZ" id="6Sn-SM-6bu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fN1-Cd-A8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
