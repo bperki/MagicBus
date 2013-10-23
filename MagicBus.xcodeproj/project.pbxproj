@@ -43,9 +43,6 @@
 		DDDABE1F1816DB4A004E29A5 /* stopsIcon@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE1D1816DB4A004E29A5 /* stopsIcon@2x.psd */; };
 		DDDABE221816DCC1004E29A5 /* routesIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE201816DCC1004E29A5 /* routesIcon@2x.png */; };
 		DDDABE231816DCC1004E29A5 /* routesIcon@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE211816DCC1004E29A5 /* routesIcon@2x.psd */; };
-		DDDABE3318175D9B004E29A5 /* App Icon Template [3.2].atn in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE2618175D9B004E29A5 /* App Icon Template [3.2].atn */; };
-		DDDABE3418175D9B004E29A5 /* App Icon Template [3.2].psd in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE2718175D9B004E29A5 /* App Icon Template [3.2].psd */; };
-		DDDABE3518175D9B004E29A5 /* readme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE2818175D9B004E29A5 /* readme.rtf */; };
 		DDDABE3618175D9B004E29A5 /* icon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE2918175D9B004E29A5 /* icon29x29.png */; };
 		DDDABE3718175D9B004E29A5 /* icon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE2A18175D9B004E29A5 /* icon29x29@2x.png */; };
 		DDDABE3818175D9B004E29A5 /* icon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDABE2B18175D9B004E29A5 /* icon40x40.png */; };
@@ -116,9 +113,6 @@
 		DDDABE1D1816DB4A004E29A5 /* stopsIcon@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "stopsIcon@2x.psd"; sourceTree = "<group>"; };
 		DDDABE201816DCC1004E29A5 /* routesIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "routesIcon@2x.png"; sourceTree = "<group>"; };
 		DDDABE211816DCC1004E29A5 /* routesIcon@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "routesIcon@2x.psd"; sourceTree = "<group>"; };
-		DDDABE2618175D9B004E29A5 /* App Icon Template [3.2].atn */ = {isa = PBXFileReference; lastKnownFileType = file; path = "App Icon Template [3.2].atn"; sourceTree = "<group>"; };
-		DDDABE2718175D9B004E29A5 /* App Icon Template [3.2].psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "App Icon Template [3.2].psd"; sourceTree = "<group>"; };
-		DDDABE2818175D9B004E29A5 /* readme.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = readme.rtf; sourceTree = "<group>"; };
 		DDDABE2918175D9B004E29A5 /* icon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon29x29.png; sourceTree = "<group>"; };
 		DDDABE2A18175D9B004E29A5 /* icon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon29x29@2x.png"; sourceTree = "<group>"; };
 		DDDABE2B18175D9B004E29A5 /* icon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon40x40.png; sourceTree = "<group>"; };
@@ -294,7 +288,6 @@
 		DDDABE2418175D9B004E29A5 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				DDDABE2518175D9B004E29A5 /* App Icon Template [3.2] */,
 				DDDABE2918175D9B004E29A5 /* icon29x29.png */,
 				DDDABE2A18175D9B004E29A5 /* icon29x29@2x.png */,
 				DDDABE2B18175D9B004E29A5 /* icon40x40.png */,
@@ -307,16 +300,6 @@
 				DDDABE3218175D9B004E29A5 /* iTunesArtwork@2x.png */,
 			);
 			path = icons;
-			sourceTree = "<group>";
-		};
-		DDDABE2518175D9B004E29A5 /* App Icon Template [3.2] */ = {
-			isa = PBXGroup;
-			children = (
-				DDDABE2618175D9B004E29A5 /* App Icon Template [3.2].atn */,
-				DDDABE2718175D9B004E29A5 /* App Icon Template [3.2].psd */,
-				DDDABE2818175D9B004E29A5 /* readme.rtf */,
-			);
-			path = "App Icon Template [3.2]";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,14 +392,12 @@
 				DD49CE14180CC9B80041558B /* PP_N.jpg in Resources */,
 				DDDABE3918175D9B004E29A5 /* icon40x40@2x.png in Resources */,
 				DDDABE3618175D9B004E29A5 /* icon29x29.png in Resources */,
-				DDDABE3418175D9B004E29A5 /* App Icon Template [3.2].psd in Resources */,
 				DDDABE3E18175D9B004E29A5 /* iTunesArtwork.png in Resources */,
 				DD150D05180A473600D8C61F /* Images.xcassets in Resources */,
 				DDDABE3C18175D9B004E29A5 /* icon76x76.png in Resources */,
 				DD49CDFF180B91E60041558B /* CCTC.jpg in Resources */,
 				DD150CFD180A473600D8C61F /* Main_iPhone.storyboard in Resources */,
 				DD49CE13180CC9B80041558B /* FXB_S.jpg in Resources */,
-				DDDABE3518175D9B004E29A5 /* readme.rtf in Resources */,
 				DDDABE3A18175D9B004E29A5 /* icon60x60.png in Resources */,
 				DD49CE15180CC9B80041558B /* PP_S.jpg in Resources */,
 				DD150CF4180A473500D8C61F /* InfoPlist.strings in Resources */,
@@ -424,7 +405,6 @@
 				DDDABE231816DCC1004E29A5 /* routesIcon@2x.psd in Resources */,
 				DD49CE02180C28B10041558B /* NorthCampus_Afternoon.jpg in Resources */,
 				DDDABE221816DCC1004E29A5 /* routesIcon@2x.png in Resources */,
-				DDDABE3318175D9B004E29A5 /* App Icon Template [3.2].atn in Resources */,
 				DD49CE12180CC9B80041558B /* BB_W.jpg in Resources */,
 				DDDABE3718175D9B004E29A5 /* icon29x29@2x.png in Resources */,
 				DDDABE3B18175D9B004E29A5 /* icon60x60@2x.png in Resources */,
