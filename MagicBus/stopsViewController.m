@@ -16,6 +16,7 @@
 
 @implementation stopsViewController
 int searchBarHeight = 24;
+int tabBarHeight = 50; // Todo: Get this properly
 
 - (void)viewDidLoad
 {
@@ -58,8 +59,8 @@ int searchBarHeight = 24;
     
     [_stopsScrollView setContentInset:UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0)];
     [_stopsScrollView setScrollIndicatorInsets:UIEdgeInsetsMake([[UIApplication sharedApplication] statusBarFrame].size.height, 0, 0, 0)];
-    [_arrivalTable setScrollIndicatorInsets:UIEdgeInsetsMake(0, 0, [_tabBar frame].size.height, 0)];
-    [_arrivalTable setContentInset:UIEdgeInsetsMake(0, 0, [_tabBar frame].size.height, 0)];
+    [_arrivalTable setScrollIndicatorInsets:UIEdgeInsetsMake(0, 0, tabBarHeight, 0)];
+    [_arrivalTable setContentInset:UIEdgeInsetsMake(0, 0, tabBarHeight, 0)];
     
     
 }
@@ -70,12 +71,18 @@ int searchBarHeight = 24;
     [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // These won't fire in viewDidLoad
     [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight) animated:NO];
     [_stopsScrollView setAutoresizesSubviews:NO];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [_stopsScrollView setContentSize:CGSizeMake(320, 175)]; // These won't fire in viewDidLoad
     [_stopsScrollView setContentOffset:CGPointMake(0, searchBarHeight) animated:NO];
+    
+    
+    CGRect frame = [_arrivalTable frame];
+    frame.size.height = [UIScreen mainScreen].bounds.size.height - ([_stopsScrollView frame].size.height + [_stopsScrollView frame].origin.y); // Todo: Figure out why bottom constraint isn't working
+    [_arrivalTable setFrame:frame];
     
     [self setStopsScrollViewContentHeightForRows:2];
     

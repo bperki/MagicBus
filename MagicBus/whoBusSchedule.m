@@ -61,7 +61,7 @@
 
 -(int)getNumberOfArrivals
 {
-    return [arrivals count];
+    return [[NSNumber numberWithLong:[arrivals count]] intValue];
 }
 
 -(NSDictionary *)getArrivalAtIndex:(int)index
