@@ -181,12 +181,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="imS-Of-IsZ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="imS-Of-IsZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="imS-Of-IsZ" secondAttribute="bottom" id="PuF-p2-dTx"/>
+                            <constraint firstAttribute="trailing" secondItem="imS-Of-IsZ" secondAttribute="trailing" id="Pz3-QR-TQt"/>
+                            <constraint firstItem="imS-Of-IsZ" firstAttribute="leading" secondItem="QZ0-9Z-v0n" secondAttribute="leading" id="VmG-6l-mh0"/>
+                            <constraint firstItem="imS-Of-IsZ" firstAttribute="top" secondItem="QZ0-9Z-v0n" secondAttribute="top" id="WVx-38-Cop"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="XdY-xH-9KU"/>
                     <connections>
