@@ -19,6 +19,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(userLocationChanged:)
+                                                     name:@"locationChanged"
+                                                   object:nil];
         
     }
     return self;
@@ -29,9 +33,13 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(userLocationChanged:)
-                                             name:@"locationChanged"
-                                             object:nil];
-	// Do any additional setup after loading the view.
+                                                 name:@"locationChanged"
+                                               object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    
 }
 
 - (void) userLocationChanged:(NSNotification *)notification
@@ -39,11 +47,6 @@
     NSDictionary *info = [notification userInfo];
     location = [info valueForKey:@"location"];
     [_mapView setRegion:MKCoordinateRegionMake([location coordinate], MKCoordinateSpanMake(1.0f, 1.0f)) animated:YES];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    
 }
 
 - (void)didReceiveMemoryWarning

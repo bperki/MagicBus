@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "whoUserLocationController.h"
 
-@interface mapViewController : UIViewController
+@interface mapViewController : UIViewController 
 {
     CLLocation *location;
 }
